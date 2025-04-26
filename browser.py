@@ -31,6 +31,7 @@ class SimpleBrowser:
         # URL bar and fetch button
         self.url_frame = tk.Frame(self.parent, bg="white")
         self.url_entry = tk.Entry(self.url_frame, width=50)
+        self.url_entry.bind("<Return>", lambda event: self.load_url())
         self.fetch_btn = tk.Button(self.url_frame, text="Go", command=self.load_url)
         self.url_entry.pack(side=tk.LEFT, padx=5)
         self.fetch_btn.pack(side=tk.LEFT)
